@@ -1,12 +1,12 @@
 import os
 from flask import Flask, jsonify;
 from typing import Optional;
-from flask_cors import CORS
+#from flask_cors import CORS
 
 flask_app = Flask(__name__)
 app = Flask(__name__, static_folder='./build', static_url_path='/')
 
-CORS(app) #comment this on deployment
+#CORS(app) #comment 
 
 @app.route('/')
 def index():
