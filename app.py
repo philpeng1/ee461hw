@@ -8,8 +8,8 @@ app = Flask(__name__, static_folder='./build', static_url_path='/')
 def index():
     return app.send_static_file('index.html')
 
-
-@app.route("/name/<input>", methods=["GET"])
+@app.route("/home/")
+@app.route("/home/<input>", methods=["GET"])
 def returnname(input: Optional[str] = None):
 	if(input == 'phil'):
 		output = 'peng'
@@ -20,4 +20,4 @@ def returnname(input: Optional[str] = None):
 
      
 if __name__ == '__main__':
-    flask_app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
+    flask_app.run(debug=True)
