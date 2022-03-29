@@ -17,17 +17,25 @@ function App() {
    }
   }
   return (
-    <div className="App">{
-      (e) => {
-        setData(e.target.value);
-        fetch("/home/" + e.target.value)
-          .then(response => response.json())
-          .then(data => {setError(data.lastname)})
-          
-        }
-      }
-        
-    </div>
+    <div className="App">
+      {
+      name?
+      <h1> peng</h1>
+      :
+      <><><h1>type phil</h1>
+      <input type="text" onChange={returnData} />
+      </><input id="username" type="text" value={data} onChange={(e) => {
+            setData(e.target.value);
+            fetch("http://127.0.0.1:5000/home/" + e.target.value)
+              //fetch("/home/" + e.target.value)
+              .then(response => response.json())
+              .then(data => { setError(data.lastname); })
+              .catch(error => { setError(error); });
+          } } /></>
+    }
+    </div>   
+  
+  
   );
 }
 
