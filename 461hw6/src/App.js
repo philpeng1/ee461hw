@@ -6,7 +6,7 @@ import React, {useState} from 'react'
 function App() {
    const [data, setData] = useState(null)
    const [name, setCheck] = useState(false)
-   const [error, setError] = useState("ERROR: User Not Found");
+   const [error, setError] = useState("type phil - ERROR: User Not Found");
 
    function returnData(val){
      setData(val.target.value)
