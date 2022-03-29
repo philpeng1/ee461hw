@@ -24,7 +24,7 @@ function App() {
       name?
       <h1> peng</h1>
       :
-      <><><h1>type phil</h1>
+      <><><h1>type phil - user not found</h1>
       <input type="text" onChange={returnData} />
       </><input id="username" type="text" value={data} onChange={(e) => {
             setData(e.target.value);
