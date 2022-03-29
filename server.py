@@ -9,7 +9,7 @@ def index():
 
 
 @app.route("/name/<input>", methods=["GET"])
-def return(input: Optional[str] = None):
+def returnname(input: Optional[str] = None):
 	if(input == 'phil'):
 		output = 'peng'
 	else:
