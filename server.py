@@ -1,7 +1,22 @@
-from flask import Flask
+from flask import Flask, jsonify;
+from flask_cors import CORS
 flask_app = Flask(__name__)
-@flask_app.route('/')
+app = Flask(__name__, static_folder='./build', static_url_path='/')
+CORS(app)
+@app.route('/')
 def index():
     return app.send_static_file('index.html')
-if __name__ == '__main__':
-    flask_app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
+
+
+@app.route("/name/<input>", methods=["GET"])
+def return(input: Optional[str] = None):
+	if(input == 'phil'):
+		output = 'peng'
+	else:
+		output = 'type phil'
+
+	return jsonify(last_name = output)
+
+     
+if __name__ == "__main__":
+  app.run(debug=False)
