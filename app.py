@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify;
 from typing import Optional;
 flask_app = Flask(__name__)
@@ -18,5 +19,5 @@ def returnname(input: Optional[str] = None):
 	return jsonify(last_name = output)
 
      
-if __name__ == "__main__":
-  app.run(debug=False)
+if __name__ == '__main__':
+    flask_app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
