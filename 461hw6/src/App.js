@@ -26,8 +26,8 @@ function App() {
       <input type="text" onChange={returnData} />
       </><input id="username" type="text" value={data} onChange={(e) => {
             setData(e.target.value);
-            fetch("http://127.0.0.1:5000/home/" + e.target.value)
-              //fetch("/home/" + e.target.value)
+            //fetch("http://127.0.0.1:5000/home/" + e.target.value)
+              fetch("/home/" + e.target.value)
               .then(response => response.json())
               .then(data => { setError(data.lastname); })
               .catch(error => { setError(error); });
