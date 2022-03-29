@@ -6,7 +6,7 @@ import React, {useState} from 'react'
 function App() {
    const [data, setData] = useState(null)
    const [name, setCheck] = useState(false)
-   const [error, setError] = useState("type phil - ERROR: User Not Found");
+   const [error, setError] = useState("ERROR: User Not Found, try typing phil");
 
    function returnData(val){
      setData(val.target.value)
@@ -24,7 +24,7 @@ function App() {
       name?
       <h1> peng</h1>
       :
-      <><><h1>type phil - ERROR: User Not Found</h1>
+      <><><h1>ERROR: User Not Found, try typing phil</h1>
       <input type="text" onChange={returnData} />
       </><input id="username" type="text" value={data} onChange={(e) => {
             setData(e.target.value);
