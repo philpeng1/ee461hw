@@ -1,12 +1,12 @@
 import os
 from flask import Flask, jsonify;
 from typing import Optional;
-#from flask_cors import CORS
+from flask_cors import CORS
 
-flask_app = Flask(__name__)
-app = Flask(__name__, static_folder='./build', static_url_path='/')
+#flask_app = Flask(__name__)
+app = Flask(__name__, static_folder='461hw6/build', static_url_path='/')
 
-#CORS(app) #comment 
+CORS(app) #comment 
 
 @app.route('/')
 def index():
@@ -24,4 +24,4 @@ def returnname(input: Optional[str] = None):
 
      
 if __name__ == '__main__':
-    flask_app.run(debug=True)
+    app.run(debug=True)
