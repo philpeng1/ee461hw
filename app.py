@@ -18,7 +18,7 @@ def returnname(input: Optional[str] = None):
 	if(input == 'phil'):
 		output = 'peng'
 	else:
-		output = 'type phil - ERROR: User Not Found'
+		output = 'type phil'
 
 	return jsonify(lastname = output)
 
