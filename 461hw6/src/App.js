@@ -18,14 +18,15 @@ function App() {
   }
   return (
     <div className="App">{
-      name?
-      <h1>peng</h1>
-      :
-      <h1> type phil</h1>
-
-    }
-    <input type = 'text' onChange = {returnData}/>
-    
+      (e) => {
+        setData(e.target.value);
+        fetch("/home/" + e.target.value)
+          .then(response => response.json())
+          .then(data => {setError(data.lastname)})
+          
+        }
+      }
+        
     </div>
   );
 }
