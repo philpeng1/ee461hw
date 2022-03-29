@@ -16,7 +16,7 @@ def returnname(input: Optional[str] = None):
 	else:
 		output = 'type phil'
 
-	return jsonify(last_name = output)
+	return jsonify(lastname = output)
 
      
 if __name__ == '__main__':
